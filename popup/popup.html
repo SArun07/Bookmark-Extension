@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Bookmarks</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bookmarks</h1>
+            <button id="add-bookmark" class="add-button"><i class="material-icons">add</i></button>
+        </div>
+        <div id="bookmark-form" class="form hidden">
+            <input type="text" id="bookmark-title" placeholder="Title" required>
+            <input type="text" id="bookmark-tags" placeholder="Tags (comma separated)">
+            <textarea id="bookmark-description" placeholder="Description"></textarea>
+            <div class="form-actions">
+                <button id="cancel-bookmark" class="cancel-button">Cancel</button>
+                <button id="save-bookmark" class="save-button">Save</button>
+            </div>
+        </div>
+        <div id="no-bookmarks" class="no-bookmarks hidden">No bookmarks added. Click "Plus Icon" to create one!</div>
+        <div id="bookmark-list" class="bookmark-list"></div>
+
+        <template id="bookmark-template">
+            <div class="bookmark-item">
+                <div class="logo"><div class="logo-item"><p></p></div></div>
+                <div class="item-block">
+                    <h3></h3>
+                    <p class="url"></p>
+                    <p class="tags"></p>
+                    <p class="description"></p>
+                </div>
+                <div class="delete-button"><button class="delete-bookmark add-button"><i class="material-icons">close</i></button></div>
+            </div>
+        </template>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
