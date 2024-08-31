@@ -11,11 +11,15 @@
     <div class="container">
         <div class="header">
             <h1>Bookmarks</h1>
-            <button id="add-bookmark" class="add-button"><i class="material-icons">add</i></button>
+            <div class="header-item"> 
+                <input type="text" id="search-input" class="search-input hidden" placeholder="Search bookmarks...">
+                <button id="search-button" class="search-button"><i class="material-icons">search</i></button>
+                <button id="add-bookmark" class="add-button"><i class="material-icons">add</i></button>
+            </div>
         </div>
         <div id="bookmark-form" class="form hidden">
             <input type="text" id="bookmark-title" placeholder="Title" required>
-            <input type="text" id="bookmark-tags" placeholder="Tags (comma separated)">
+            <input type="text" id="bookmark-urlinput" placeholder="urlinput">
             <textarea id="bookmark-description" placeholder="Description"></textarea>
             <div class="form-actions">
                 <button id="cancel-bookmark" class="cancel-button">Cancel</button>
@@ -24,14 +28,22 @@
         </div>
         <div id="no-bookmarks" class="no-bookmarks hidden">No bookmarks added. Click "Plus Icon" to create one!</div>
         <div id="bookmark-list" class="bookmark-list"></div>
+        <div class="footer"><p>Powered by Debuginit</p></div>
 
         <template id="bookmark-template">
             <div class="bookmark-item">
-                <div class="logo"><div class="logo-item"><p></p></div></div>
+                <div class="logo"><div class="logo-item"><img src="../icons/icon.png" alt="Default Favicon" class="favicon"></div></div>
                 <div class="item-block">
-                    <h3></h3>
+                    <div class="title-block">
+                        <h3></h3>
+                        <div class="item-content">
+                            <button class="copy-button"><i class="material-icons">content_copy</i></button>
+                            <button class="share-button"><i class="material-icons">share</i></button>
+                            <button class="open-button"><i class="material-icons">open_in_new</i></button>
+                        </div>
+                    </div>
                     <p class="url"></p>
-                    <p class="tags"></p>
+                    <p class="urlinput"></p>
                     <p class="description"></p>
                 </div>
                 <div class="delete-button"><button class="delete-bookmark add-button"><i class="material-icons">close</i></button></div>
